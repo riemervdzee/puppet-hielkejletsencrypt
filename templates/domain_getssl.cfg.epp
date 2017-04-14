@@ -1,0 +1,29 @@
+# This file is maintained by Puppet
+
+# Additional domains - this could be multiple domains / subdomains in a comma separated list
+# Note: this is Additional domains - so should not include the primary domain.
+<% if empty($sub_domains) { -%>
+SANS=
+<% } else { -%>
+SANS=<%= join($sub_domains, ",") -%>
+<% } -%>
+
+# Acme Challenge Location. The first line for the domain, the following ones for each additional domain.
+# If these start with ssh: then the next variable is assumed to be the hostname and the rest the location.
+ACL="<%= $acl -%>"
+
+#Enable use of a single ACL for all checks
+USE_SINGLE_ACL=<%= $use_single_acl -%>
+
+# Location for all your certs, these can either be on the server (full path name)
+# or using ssh /sftp as for the ACL
+
+# The command needed to reload apache / nginx or whatever you use
+RELOAD_CMD="<%= $domain_reload_command -%>"
+
+# Define the server type. This can be https, ftp, ftpi, imap, imaps, pop3, pop3s, smtp,
+# smtps_deprecated, smtps, smtp_submission, xmpp, xmpps, ldaps or a port number which
+# will be checked for certificate expiry and also will be checked after
+# an update to confirm correct certificate is running (if CHECK_REMOTE) is set to true
+SERVER_TYPE="<%= $server_type -%>"
+CHECK_REMOTE="<%= $check_remote -%>"

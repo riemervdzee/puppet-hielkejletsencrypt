@@ -1,0 +1,12 @@
+{
+  "name": "hielkejletsencrypt",
+  "version": "1.0.0",
+  "author": "Hielke Jager",
+  "data_provider": "hiera",
+  "license": "Apache-2.0",
+  "summary": "Lets encrypt module",
+  "source": "http://git.hielkej.nl/puppet/hielkej-letsencrypt",
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0 < 5.0.0" }
+  ]
+}

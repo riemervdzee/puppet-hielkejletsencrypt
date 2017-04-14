@@ -1,0 +1,22 @@
+---
+hielkejletsencrypt::base_dir: '/etc/ssl/letsencrypt'
+hielkejletsencrypt::account_mail: ''
+hielkejletsencrypt::manage_cron: true
+hielkejletsencrypt::use_production_ca: true
+hielkejletsencrypt::production_ca: 'https://acme-v01.api.letsencrypt.org'
+hielkejletsencrypt::staging_ca: 'https://acme-staging.api.letsencrypt.org'
+
+hielkejletsencrypt::key_length: 4096
+hielkejletsencrypt::private_key_alg: 'rsa'
+hielkejletsencrypt::reuse_private_key: true
+hielkejletsencrypt::renew_allow: 30
+hielkejletsencrypt::server_type: 'https'
+hielkejletsencrypt::check_remote: true
+hielkejletsencrypt::ssl_conf: '/etc/ssl/openssl.cnf'
+
+hielkejletsencrypt::domain::acl: '/var/www/acme-challenge/'
+hielkejletsencrypt::domain::base_dir: '/etc/ssl/letsencrypt'
+hielkejletsencrypt::domain::use_single_acl: true
+hielkejletsencrypt::domain::server_type: 'https'
+hielkejletsencrypt::domain::check_remote: true
+

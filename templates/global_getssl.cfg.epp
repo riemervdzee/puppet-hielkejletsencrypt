@@ -1,0 +1,30 @@
+# This file is maintained by Puppet
+
+CA="<%= $ca -%>"
+
+<% if $account_mail { -%>
+ACCOUNT_EMAIL="<%= $account_mail -%>"
+<% } -%>
+ACCOUNT_KEY_LENGTH=<%= $account_key_length %>
+ACCOUNT_KEY="<%= $base_dir%>/conf/account.key"
+PRIVATE_KEY_ALG="<%= $private_key_alg -%>"
+REUSE_PRIVATE_KEY="<%= $reuse_private_key -%>"
+
+<% if $reload_command { -%>
+# The command needed to reload apache / nginx or whatever you use
+RELOAD_CMD="<%= $reload_command -%>"
+<% } -%>
+
+# The time period within which you want to allow renewal of a certificate
+#  this prevents hitting some of the rate limits.
+RENEW_ALLOW="<%= $renew_allow -%>"
+
+# Define the server type. This can be https, ftp, ftpi, imap, imaps, pop3, pop3s, smtp,
+# smtps_deprecated, smtps, smtp_submission, xmpp, xmpps, ldaps or a port number which
+# will be checked for certificate expiry and also will be checked after
+# an update to confirm correct certificate is running (if CHECK_REMOTE) is set to true
+SERVER_TYPE="<%= $server_type -%>"
+CHECK_REMOTE="<%= $check_remote -%>"
+
+# openssl config file.  The default should work in most cases.
+SSLCONF="<%= $ssl_conf -%>"
