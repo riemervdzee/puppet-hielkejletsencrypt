@@ -1,4 +1,8 @@
-## Release 1.0.1
+## Release v1.0.2
+#### Changes
+- Added directory check in letsencryptcerts facts
+- Remove wildcard domains from SANS list
 
+## Release v1.0.1
 #### Changes
 - Only create a cronjob if a LetsEncrypt certificate is used on the server.

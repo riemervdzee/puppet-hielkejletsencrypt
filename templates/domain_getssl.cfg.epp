@@ -5,7 +5,7 @@
 <% if empty($sub_domains) { -%>
 SANS=
 <% } else { -%>
-SANS=<%= join($sub_domains, ",") -%>
+SANS="<% $sub_domains.each | $subdomain | { -%><% if ($subdomain[0] != '*') { -%><%= $subdomain -%>,<% } -%><% } -%>"
 <% } -%>
 
 # Acme Challenge Location. The first line for the domain, the following ones for each additional domain.
@@ -13,7 +13,7 @@ SANS=<%= join($sub_domains, ",") -%>
 ACL="<%= $acl -%>"
 
 #Enable use of a single ACL for all checks
-USE_SINGLE_ACL=<%= $use_single_acl -%>
+USE_SINGLE_ACL="<%= $use_single_acl -%>"
 
 # Location for all your certs, these can either be on the server (full path name)
 # or using ssh /sftp as for the ACL
