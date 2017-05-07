@@ -1,3 +1,7 @@
+## Release v1.0.3
+#### Changes
+- Remove trailing comma in domain config
+
 ## Release v1.0.2
 #### Changes
 - Added directory check in letsencryptcerts facts

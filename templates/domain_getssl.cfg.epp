@@ -5,7 +5,7 @@
 <% if empty($sub_domains) { -%>
 SANS=
 <% } else { -%>
-SANS="<% $sub_domains.each | $subdomain | { -%><% if ($subdomain[0] != '*') { -%><%= $subdomain -%>,<% } -%><% } -%>"
+SANS="<% $sub_domains.each | $index, $subdomain | { -%><% if ($subdomain[0] != '*') { -%><%= $subdomain -%><% if ($index != $sub_domains.size - 1) { -%>,<% } -%><% } -%><% } -%>"
 <% } -%>
 
 # Acme Challenge Location. The first line for the domain, the following ones for each additional domain.
