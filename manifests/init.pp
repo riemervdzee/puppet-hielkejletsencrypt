@@ -66,7 +66,7 @@ class hielkejletsencrypt (
   if $manage_cron and (size($facts['letsencryptcerts']) > 0) {
     cron { 'getssl_renew':
       ensure  => present,
-      command => "${base_dir}/getssl -w ${base_dir}/conf -a -q -U",
+      command => "${base_dir}/getssl -w ${base_dir}/conf/ -a -q -U",
       user    => 'root',
       hour    => '23',
       minute  => '5',
