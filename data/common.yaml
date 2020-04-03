@@ -3,7 +3,7 @@ hielkejletsencrypt::base_dir: '/etc/ssl/letsencrypt'
 hielkejletsencrypt::account_mail: ''
 hielkejletsencrypt::manage_cron: true
 hielkejletsencrypt::use_production_ca: true
-hielkejletsencrypt::production_ca: 'https://acme-v01.api.letsencrypt.org'
+hielkejletsencrypt::production_ca: 'https://acme-v02.api.letsencrypt.org'
 hielkejletsencrypt::staging_ca: 'https://acme-staging.api.letsencrypt.org'
 
 hielkejletsencrypt::key_length: 4096
